@@ -1,17 +1,11 @@
 ﻿  源.cpp
-<<<<<<< HEAD
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(33,23): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(48,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(66,12): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(79,13): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(176,12): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(177,13): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(179,10): warning C4018: “>=”: 有符号/无符号不匹配
-  数组_双指针.vcxproj -> C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\Debug\数组_双指针.exe
-=======
-C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(24,23): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(39,21): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(57,12): warning C4018: “<”: 有符号/无符号不匹配
-C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\数组_双指针\源.cpp(71,13): warning C4018: “<”: 有符号/无符号不匹配
-  数组_双指针.vcxproj -> C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\Debug\数组_双指针.exe
->>>>>>> 6cdd0097ba80141ad33cc3c0495a5676d1bb69b9
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(35,24): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(50,22): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(70,13): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(83,14): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(179,13): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(180,14): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(182,11): warning C4018: “>=”: 有符号/无符号不匹配
+C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\数组_双指针\源.cpp(293,11): warning C4101: “fun”: 未引用的局部变量
+  LINK : 没有找到 C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\Debug\数组_双指针.exe 或上一个增量链接没有生成它；正在执行完全链接
+  数组_双指针.vcxproj -> C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\Debug\数组_双指针.exe

@@ -1,6 +1,2 @@
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:VCServicingVersionATL=14.29.30136:VCServicingVersionCrtHeaders=14.29.30136:VCServicingVersionCompilers=14.29.30136:TargetPlatformVersion=10.0.19041.0:
-<<<<<<< HEAD
-Debug|Win32|C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&双指针\数组_双指针\|
-=======
-Debug|Win32|C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&双指针\数组_双指针\|
->>>>>>> 6cdd0097ba80141ad33cc3c0495a5676d1bb69b9
+Debug|Win32|C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\|

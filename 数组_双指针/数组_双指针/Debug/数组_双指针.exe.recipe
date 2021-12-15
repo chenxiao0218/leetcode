@@ -2,11 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
-      <FullPath>C:\Users\27466\source\repos\lookahead\lookahead\知乎ACM\数组&amp;双指针\数组_双指针\Debug\数组_双指针.exe</FullPath>
-=======
-      <FullPath>C:\Users\JOJO\Desktop\C++\lookahead\知乎ACM\数组&amp;双指针\数组_双指针\Debug\数组_双指针.exe</FullPath>
->>>>>>> 6cdd0097ba80141ad33cc3c0495a5676d1bb69b9
+      <FullPath>C:\Users\JOJO\Desktop\C++\leetcode\数组_双指针\Debug\数组_双指针.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
