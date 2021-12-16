@@ -246,34 +246,100 @@ typedef struct ListNode {
 			}
 			return res;
 		}
-		//不借助数组使用归并排序
-		void mergeSort(ListNode* left, ListNode* right) {
-			ListNode* head1 = left;
-			ListNode* fast1 = head1, * slow1 = head1;
-			while (fast1 != right && fast1->next != right) {
-				fast1 = fast1->next->next;
-				slow1 = slow1->next;
-			}
-			ListNode* head2 = right;
-			ListNode* fast2 = head2, * slow2 = head2;
-			while (fast2 && fast2->next) {
-				fast2 = fast2->next->next;
-				slow2 = slow2->next;
-			}
 
+		//不借助数组使用归并排序(从上到下，仍然是O(n)级别的空间复杂度
+		ListNode* mergeSort(ListNode* left, ListNode* right) {
+			ListNode* res = new ListNode;
+			ListNode* tail = res;
+			//头插法
+			while (left && right) {
+				if (left->val <= right->val) {
+					tail->next = left;
+					left = left->next;
+				}
+				else {
+					tail->next = right;
+					right = right->next;
+				}
+				tail = tail->next;
+			}
+			if (left) tail->next = left;
+			if (right) tail->next = right;
+			return res->next;
+		}
+		ListNode* sortList2(ListNode* head, ListNode* tail) {
+			if (!head) return nullptr;
+			//递归到最后只剩下一个元素的情况，要将next指向null，这样合并两个链表的时候才有终止条件
+			//这里判断只剩下一个元素的条件注意表示head->next==nullptr
+			if (head->next==tail) {
+				head->next = nullptr;
+				return head;
+			}
+			//注意寻找中点的时候条件是fast!=tail，而不是nullptr
+			//由于一开始传进来的tail也是nullptr，因此区间选择为左闭右开
+			ListNode* slow = head, * fast = head;
+			while (fast->next!=tail) {
+				fast = fast->next;
+				slow = slow->next;
+				if (fast->next!=tail)fast = fast->next;
+			}
+			//此时slow指针必定指向中间元素（奇数个元素）或中间元素的下一位（偶数个元素），所以区间为左闭右开
 
+			//该递归将一直堆到栈中，直到剩下一个元素时，开始排序，开始释放栈
+			return mergeSort(sortList2(head, slow), sortList2(slow, tail));
+			//套娃形式如下
+//mergeSort(mergeSort(sortList2(head, slow), sortList2(slow, tail))，mergeSort(sortList2(head, slow), sortList2(slow, tail)))
 		}
 		ListNode* sortList2(ListNode* head) {
-			ListNode* fast = head, * slow = head;
-			while (fast && fast->next) {
-				fast = fast->next->next;
-				slow = slow->next;
-			}
-			mergeSort(head, slow);
-			return head;
-
+			return sortList2(head, nullptr);
 		}
 
+		//尝试归并排序，并且使用常数的空间复杂度，自底向上递归
+		ListNode* sortList3(ListNode* head) {
+			if (!head || !head->next) return head;
+			int len = 0;
+			//先求数组的长度
+			ListNode* p = head;
+			while (p) {
+				p = p->next;
+				len++;
+			}
+			//定义一个数组大小的控制量，一开始排序一个（本身），然后排序相邻两个数，再是四个，最后一组数可以小于这个数
+			int range = 1;
+			ListNode* res = new ListNode;
+			res->next = head;
+			for (range = 1; range <= len; range <<= 1) {
+				//利用尾插法记录结果
+				ListNode* tail = res;
+				//记录当前指向的
+				ListNode* cur = res->next;
+				while (cur) {
+					ListNode* head1 = cur;
+					for (int i = 1; i < range && cur->next; i++) cur = cur->next;
+					//将head2指向下一位，然后从cur处断开指针,注意这里head2会可能是nullptr，当cur为最后一位时
+					ListNode* head2 = cur->next;
+					cur->next = nullptr;
+					cur = head2;
+					for (int i = 1; cur && i < range && cur->next; i++) cur = cur->next;
+					//设置head2的断点,想让temp默认等于null
+					ListNode* temp = nullptr;
+
+					if (cur) {
+						temp = cur->next;
+						cur->next = nullptr;
+
+					}
+					ListNode* merged = mergeSort(head1, head2);
+					tail->next = merged;
+					//将tail指向已经排完序的数组的最后一位
+					while (tail->next) {
+						tail = tail->next;
+					}
+					cur = temp;
+				}
+			}
+			return res->next;
+		}
 };
 
 
