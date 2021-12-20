@@ -340,6 +340,44 @@ typedef struct ListNode {
 			}
 			return res->next;
 		}
+		//leetcod4 寻找两个正序数组拼接后的中位数
+		//思路1 用额外的数组空间，然后双指针插入排序，返回中间位即可，时间复杂度m+n 空间复杂度m+n
+		//思路2 寻找中位数，假设两个数组一共有sum个数，那么中位数即第k(k=sum/2)小的那个数，通过二分法可快速求得
+		double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2, int k) {
+			//k为第几个数，而不是下标
+			int index1 = 0, index2 = 0;
+			int this1 = 0, this2 = 0;
+			int m = nums1.size() - 1, n = nums2.size() - 1;
+			//分别求两个数组的第k/2个元素，比较两者大小，较小的那个数组前k/2-1个元素必然不会是中位数，就可以丢掉
+			while (true) {
+				if (index1 > m) return nums2[index2 + k - 1];
+				if (index2 > n)return nums1[index1 + k - 1];
+				if (k == 1) return min(nums1[index1], nums2[index2]);
+
+				this1 = min(index1 + k / 2 - 1, m);
+				this2 = min(index2 + k / 2 - 1, n);
+				if (nums1[this1] <= nums2[this2]) {
+					k = k - this1 - 1+index1;
+					index1 = this1 + 1;
+					
+				}
+				else {
+					k = k - this2 - 1+index2;
+					index2 = this2 + 1;
+					
+				}
+			}
+
+		}
+		double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+			int len = nums1.size() + nums2.size();
+			//数组总长度为奇数的情况下找到第（len+1)/2小的元素就是中位数
+			if (len % 2) return findMedianSortedArrays(nums1, nums2, (len + 1) / 2);
+			//偶数情况下返回中间两个数的平均数
+			double less1 = findMedianSortedArrays(nums1, nums2, len / 2);
+			double less2 = findMedianSortedArrays(nums1, nums2, len / 2 + 1);
+			return (less1 + less2) / 2;
+		}
 };
 
 

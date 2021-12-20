@@ -1,0 +1,7 @@
+﻿  多项式.cpp
+C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\网课操作\多项式.cpp(51,12): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\网课操作\多项式.cpp(51,29): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\网课操作\多项式.cpp(61,12): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\网课操作\多项式.cpp(62,12): warning C4018: “<”: 有符号/无符号不匹配
+C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\网课操作\多项式.cpp(69,21): warning C4018: “<”: 有符号/无符号不匹配
+  网课操作.vcxproj -> C:\Users\27466\source\repos\知乎ACM\leetcode\网课\网课操作\Debug\网课操作.exe
