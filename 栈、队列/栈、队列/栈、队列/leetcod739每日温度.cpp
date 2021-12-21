@@ -4,7 +4,7 @@
 #include<vector>
 using namespace std;
 
-class Solution {
+class Solution739 {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
         vector<int> res;

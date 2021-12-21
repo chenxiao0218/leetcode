@@ -5,7 +5,7 @@ using namespace std;
 
 /*给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。*/
 //解法1 滑动窗口，但是没用到队列
-class Solution {
+class Solution3 {
 public:
     bool Isexit(string s, int l, int r, char c) {
         for (int i = l;  i < r; i++) {

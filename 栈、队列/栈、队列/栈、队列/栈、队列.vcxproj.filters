@@ -33,5 +33,8 @@
     <ClCompile Include="leetcod3 无重复字符的最长子串.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="leetcod394 字符解密.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

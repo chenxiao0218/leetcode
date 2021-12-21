@@ -9,7 +9,7 @@ using namespace std;
 左括号必须用相同类型的右括号闭合。
 左括号必须以正确的顺序闭合。*/
 
-class Solution {
+class Solution20 {
 public:
     bool isValid(string s) {
         stack<char> mystack;

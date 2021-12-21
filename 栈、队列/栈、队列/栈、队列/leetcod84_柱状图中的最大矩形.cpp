@@ -10,7 +10,7 @@ using namespace std;
 
 //[2,1,0,2
 // stack -1 2 3  n=4
-class Solution {
+class Solution84 {
 public:
     int largestRectangleArea(vector<int>& heights) {
         int res = 0;
@@ -49,5 +49,4 @@ public:
         return res;
     }
 };
-    }
-};
+

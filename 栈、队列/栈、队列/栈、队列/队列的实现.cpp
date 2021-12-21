@@ -128,10 +128,3 @@ void test01() {
 		myqueue.InQueue(i + 10);
 	}
 }
-
-int main() {
-	test01();
-
-	system("pause");
-	return 0;
-}

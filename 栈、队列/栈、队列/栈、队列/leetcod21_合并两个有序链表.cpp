@@ -13,7 +13,7 @@ struct ListNode {
 
 //传入的参数是指向首位元素的指针，而非头节点
 //解法1 双指针 非常简单
-class Solution {
+class Solution21 {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         ListNode* head1 = list1;
