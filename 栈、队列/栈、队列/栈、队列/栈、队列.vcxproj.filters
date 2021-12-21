@@ -36,5 +36,8 @@
     <ClCompile Include="leetcod394 字符解密.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="leetcod239 滑动窗口的最大值.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="leetcod20_有效括号.cpp" />
     <ClCompile Include="leetcod21_合并两个有序链表.cpp" />
+    <ClCompile Include="leetcod239 滑动窗口的最大值.cpp" />
     <ClCompile Include="leetcod3 无重复字符的最长子串.cpp" />
     <ClCompile Include="leetcod394 字符解密.cpp" />
     <ClCompile Include="leetcod739每日温度.cpp" />
