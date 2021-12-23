@@ -18,10 +18,19 @@ void lprtree(mytree* p) {
 	lprtree(p->rson);
 }
 //中序非递归遍历
-void llprtree(mytree* p) {
-	stack<int> help;
-	while (p) {
-
+void llrtree(mytree* p) {
+	stack<mytree*>help;
+	while (p || !help.empty()) {
+		while (p) {
+			help.push(p);
+			p = p->lson;
+		}
+		if (!help.empty()) {
+			cout << help.top()->val << endl;
+			p = help.top()->rson;
+			help.pop();
+			
+		}
 	}
 }
 //先序递归遍历
@@ -34,16 +43,33 @@ void prtree(mytree* p) {
 //先序非递归遍历
 void pprtree(mytree* p) {
 	stack<mytree*> help;
-	do {
-			
-			cout << p->val << endl;
-			if(p->rson)help.push(p->rson);
-			if (p->lson)help.push(p->lson);
-			p = help.top();
-			help.pop();
-	} while (!help.empty());
+	help.push(nullptr);
+	while (p ||!help.empty()) {
+		cout << p->val << endl;
+		//这里入栈顺序错了，但以这个顺序翻转后，可以得到后序遍历的非递归算法
+		if (p->lson)help.push(p->lson);
+		if(p->rson) help.push(p->rson);
+		
+		p = help.top();
+		help.pop();
+	}
 }
-//右序递归遍历
+void pprtree2(mytree* p) {
+	stack<mytree*>help;
+	while (p || !help.empty()) {
+		while (p) {
+			cout << p->val << endl;
+			help.push(p);
+			p = p->lson;
+		}
+		if(!help.empty()){
+			auto top = help.top();
+			p = top->rson;
+			help.pop();
+		}
+	}
+}
+//后序递归遍历
 void rprtree(mytree* p) {
 	if (!p) return;
 	rprtree(p->lson);
@@ -74,7 +100,7 @@ void test01() {
 	t3->lson = t6;
 	t3->rson = t7;
 	cout << "中序递归遍历" << endl;
-	prtree(t1);
+	rprtree(t1);
 	cout << "非递归遍历" << endl;
 	pprtree(t1);
 	//cout << "右序递归遍历" << endl;
