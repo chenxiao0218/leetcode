@@ -77,39 +77,3 @@ void rprtree(mytree* p) {
 	cout << p->val << endl;
 }
 
-
-void test01() {
-	mytree *t1 = new mytree;
-	mytree *t2 = new mytree;
-	mytree *t3 = new mytree;
-	mytree *t4 = new mytree;
-	mytree *t5 = new mytree;
-	mytree *t6 = new mytree;
-	mytree *t7 = new mytree;
-	t1->val = 1;
-	t2->val = 2;
-	t3->val = 3;
-	t4->val = 4;
-	t5->val = 5;
-	t6->val = 6;
-	t7->val = 7;
-	t1->lson = t2;
-	t1->rson = t3;
-	t2->lson = t4;
-	t2->rson = t5;
-	t3->lson = t6;
-	t3->rson = t7;
-	cout << "ÖÐÐòµÝ¹é±éÀú" << endl;
-	rprtree(t1);
-	cout << "·ÇµÝ¹é±éÀú" << endl;
-	pprtree(t1);
-	//cout << "ÓÒÐòµÝ¹é±éÀú" << endl;
-	//rprtree(t1);
-}
-
-int main() {
-	test01();
-
-	system("pause");
-	return 0;
-}

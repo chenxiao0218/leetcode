@@ -139,6 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="leetcod 101 对称二叉树.cpp" />
+    <ClCompile Include="leetcod 102层序遍历.cpp" />
+    <ClCompile Include="leetcod 104 二叉树的最大深度.cpp" />
+    <ClCompile Include="leetcod 94 二叉树的中序遍历.cpp" />
     <ClCompile Include="树的实现和遍历.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
