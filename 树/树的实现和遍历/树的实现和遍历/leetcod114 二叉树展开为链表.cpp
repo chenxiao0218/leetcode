@@ -54,20 +54,19 @@ public:
 //将原来的右子树接到左子树的最右边节点
 //考虑新的右子树的根节点，一直重复上边的过程，直到新的右子树为 null
     void flatten2(TreeNode* root) {
-        if (!root) return;
         while (root) {
-            //找到第一个有左子树的根节点
-            if (!root->left) {
-                root = root->right;
-            }
-            //找到左子树的最右节点
+            //找到第一个有左节点的root
+            if (!root->left) root = root->right;
             else {
                 TreeNode* pre = root->left;
+                //找到该root的最右节点
                 while (pre->right) pre = pre->right;
-                //
+                //将root节点原来的右子树拼接到该最右节点的右边
                 pre->right = root->right;
+                //root节点完成拼接，迭代到下一节点
+                root->right = root->left;
                 root->left = nullptr;
-                root = root->right;
+
             }
         }
     }
