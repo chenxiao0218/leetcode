@@ -16,15 +16,14 @@ typedef struct treenode {
     treenode(int x, treenode* left, treenode* right) : val(x), left(left), right(right) {}
 }mytree;
 
+mytree* pre = nullptr;
 class xiansuo {
 public:
-	mytree* pre = nullptr;
+	
+	//将一颗二叉树构建为线索二叉树
 	void Creattree(mytree* root) {
-		Creattree(root, pre);
-	}
-	void Creattree(mytree* root, mytree* pre) {
 		if (!root) return;
-		Creattree(root->left, pre);
+		Creattree(root->left);
 		if (!root->left) {
 			root->left = pre;
 			root->flag_left = 1;
@@ -34,24 +33,38 @@ public:
 			pre->flag_right = 1;
 		}
 		pre = root;
-		Creattree(root->right, pre);
+		Creattree(root->right);
 	}
 
 	mytree* FirstNode(mytree* root) {
-		while (root->left != nullptr) root = root->left;
+		while (root->left != nullptr&&!root->flag_left) root = root->left;
 		return root;
 	}
+	//查找后驱元素
 	mytree* FindNext(mytree* root) {
 		if (root->right == nullptr) {
-			cout << "last root" << endl;
+			//cout << "last root" << endl;
 			return nullptr;
 		}
 		if (root->flag_right) return root->right;
 		else return FirstNode(root->right);
 	}
+
+	//遍历二叉线索树
+	void Prttree(mytree* root) {
+		if (!root) return;
+		while (root->left != nullptr&&!root->flag_left) root = root->left;
+		while (root) {
+			cout << root->val << endl;
+			root = FindNext(root);
+		}
+	}
+
+
 };
 
-
+//1 2 3 4 5 6 7 8 0 0 0 9 10
+//8 4 2 5 1 9 6 10 3 7
 void test011() {
 	xiansuo fun;
 	mytree* t9 = new mytree(9);
@@ -67,14 +80,13 @@ void test011() {
 
 
 	fun.Creattree(t1);
-	cout << t8->right << endl;
-	while (t8->right) {
-		cout << t8->val << " ";
-		t8 = t8->right;
-	}
-	/*mytree* res = FindNext(t1);
-	cout << "res.val="<<res->val << endl;
-	cout << "res.left_flag=" << res->flag_left << endl;*/
+	fun.Prttree(t1);
+	
+	//mytree* res = fun.FindNext(t1);
+	//cout << "res.val="<<res->val << endl;
+	//cout << t1->flag_right << endl;
+	//cout << fun.FirstNode(t1)->val << endl;
+	//cout << "res.left_flag=" << res->flag_left << endl;
 
 }
 
