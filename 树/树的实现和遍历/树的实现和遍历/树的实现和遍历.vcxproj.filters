@@ -39,5 +39,8 @@
     <ClCompile Include="leetcod 543 二叉树的最长路径.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="二叉线索树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -70,7 +70,7 @@ public:
 };
 
 
-class Solution {
+class Solution2 {
 public:
     int res;
     int dfs(TreeNode* root) {

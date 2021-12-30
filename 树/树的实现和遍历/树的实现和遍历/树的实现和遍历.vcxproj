@@ -146,6 +146,7 @@
     <ClCompile Include="leetcod 94 二叉树的中序遍历.cpp" />
     <ClCompile Include="leetcod105 从先序和中序中获得树.cpp" />
     <ClCompile Include="leetcod114 二叉树展开为链表.cpp" />
+    <ClCompile Include="二叉线索树.cpp" />
     <ClCompile Include="树的实现和遍历.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
